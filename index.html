@@ -3,94 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom AI Website</title>
+    <title>ElizaOS Powered Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e00, #ff4500);
+            color: white;
         }
+
         header {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        nav {
             display: flex;
-            justify-content: center;
-            background: #444;
-            padding: 0.5rem 0;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: black;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+
+        header .logo {
+            font-size: 1.5rem;
             font-weight: bold;
         }
-        nav a:hover {
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        header nav a:hover {
             text-decoration: underline;
         }
-        section {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+
         .hero {
-            text-align: center;
-            padding: 2rem;
-            background: #007bff;
-            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem 2rem;
         }
-        .hero h1 {
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
             margin: 0;
         }
+
+        .hero-text span {
+            color: black;
+            font-weight: bold;
+        }
+
+        .hero-image {
+            max-width: 40%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
         footer {
             text-align: center;
             padding: 1rem 0;
-            background: #222;
+            background: black;
             color: white;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Your Custom AI Website</h1>
+        <div class="logo">&lt;dildo.ai&gt;</div>
+        <nav>
+            <a href="#">Twitter</a>
+            <a href="#">GitHub</a>
+            <a href="#">Pumpfun</a>
+        </nav>
     </header>
-    <nav>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section class="hero">
-        <h1>Experience AI Like Never Before</h1>
-        <p>Your journey to smarter solutions starts here.</p>
-        <button style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Get Started</button>
-    </section>
-    <section id="features">
-        <h2>Features</h2>
-        <p>Explore the cutting-edge technology behind our AI platform.</p>
-    </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Learn more about our mission and how we are transforming industries with AI.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us anytime!</p>
-        <form>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br>
-            <button type="submit" style="margin-top: 10px;">Submit</button>
-        </form>
-    </section>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>The First <span>ElizaOS</span> Powered AI Sex Bot</h1>
+        </div>
+        <div class="hero-image">
+            <img src="" alt="Hero Image" /> <!-- Replace with actual image URL -->
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Custom AI Website. All rights reserved.</p>
+        &copy; 2025 - DILDOAI - Powered by ElizaOS
     </footer>
 </body>
 </html>
