@@ -12,6 +12,28 @@
             color: white;
         }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
         .hero {
             display: flex;
             align-items: center;
@@ -41,9 +63,23 @@
             width: 100%;
             border-radius: 10px;
         }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">&lt;dildo.ai&gt;</div>
+        <nav>
+            <a href="#">Twitter</a>
+            <a href="#">GitHub</a>
+            <a href="#">Pumpfun</a>
+        </nav>
+    </header>
+
     <div class="hero">
         <div class="hero-text">
             <h1>The First <span>ElizaOS</span> Powered AI Sex Bot</h1>
@@ -52,5 +88,9 @@
             <img src="https://via.placeholder.com/400" alt="Hero Image"> <!-- Replace with actual image URL -->
         </div>
     </div>
+
+    <footer>
+        &copy; 2025 - DILDOAI - Powered by ElizaOS
+    </footer>
 </body>
 </html>
