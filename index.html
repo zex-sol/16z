@@ -68,7 +68,7 @@
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
-            animation: typing 4.5s steps(9, end), blink 0.5s step-end infinite;
+            animation: typing 2s steps(9, end), blink 0.5s step-end infinite;
         }
 
         .hero-image {
@@ -110,15 +110,16 @@
             const span = document.querySelector(".hero-text span");
 
             function loopAnimation() {
-                span.style.animation = "typing 4.5s steps(9, end), blink 0.5s step-end infinite";
+                span.style.animation = "none"; // Reset animation
+                void span.offsetWidth; // Trigger reflow to restart animation
+                span.style.animation = "typing 2s steps(9, end), blink 0.5s step-end infinite";
+
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
                         span.style.animation = "none"; // Stop animation
-                        span.style.width = "0"; // Reset text to invisible while keeping cursor visible
-                        setTimeout(() => {
-                            loopAnimation(); // Restart the loop
-                        }, 500); // Short delay before restarting
-                    }, 3000); // Wait 3 seconds before deleting text
+                        span.style.width = "0"; // Instantly delete text
+                        setTimeout(loopAnimation, 500); // Restart the loop
+                    }, 2000); // Pause for 2 seconds after typing
                 }, { once: true });
             }
 
