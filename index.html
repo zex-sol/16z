@@ -104,23 +104,15 @@
         document.addEventListener("DOMContentLoaded", () => {
             const span = document.querySelector(".hero-text span");
 
-            function resetAnimation() {
-                span.style.animation = "none";
-                span.offsetWidth; // Trigger reflow to restart animation
-                span.style.animation = "typing 4.5s steps(9, end), blink 0.5s step-end infinite";
-            }
-
             function loopAnimation() {
-                resetAnimation();
-
+                span.style.animation = "typing 4.5s steps(9, end), blink 0.5s step-end infinite";
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
-                        span.style.width = "0"; // Clear the text while keeping the cursor visible
-                        setTimeout(() => {
-                            resetAnimation(); // Restart the typing animation
-                            loopAnimation(); // Restart the loop
-                        }, 500); // Short delay before restarting
-                    }, 3000); // Wait 3 seconds with the text visible
+                        span.style.animation = "none"; // Stop animation
+                        span.style.width = "0"; // Reset text to invisible while keeping cursor visible
+                        span.style.borderRight = "6px solid #3a2318"; // Ensure cursor stays without extra space
+                        setTimeout(loopAnimation, 500); // Restart the loop after a short delay
+                    }, 3000); // Wait 3 seconds before deleting text
                 }, { once: true });
             }
 
