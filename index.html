@@ -117,7 +117,8 @@
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
                         span.style.animation = "none"; // Stop animation
-                        span.style.width = "0"; // Instantly delete text
+                        span.style.borderRight = "6px solid #3a2318"; // Ensure cursor stays visible
+                        span.textContent = ""; // Clear text instantly
                         setTimeout(loopAnimation, 500); // Restart the loop
                     }, 2000); // Pause for 2 seconds after typing
                 }, { once: true });
