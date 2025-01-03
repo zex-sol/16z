@@ -68,7 +68,7 @@
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
-            animation: typing 2s steps(9, end), blink 0.5s step-end infinite;
+            animation: typing 2s steps(9, end), blinkFade 0.5s step-end infinite;
         }
 
         .hero-image {
@@ -99,9 +99,12 @@
             }
         }
 
-        @keyframes blink {
-            50% {
-                border-color: transparent;
+        @keyframes blinkFade {
+            0%, 50% {
+                border-color: rgba(58, 35, 24, 1);
+            }
+            51%, 100% {
+                border-color: rgba(58, 35, 24, 0);
             }
         }
     </style>
@@ -113,13 +116,14 @@
                 span.style.animation = "none"; // Reset animation
                 span.textContent = "ElizaOS"; // Set text content for typing
                 void span.offsetWidth; // Trigger reflow to restart animation
-                span.style.animation = "typing 2s steps(9, end), blink 0.5s step-end infinite";
+                span.style.animation = "typing 2s steps(9, end), blinkFade 0.5s step-end infinite";
 
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
                         span.style.animation = "none"; // Stop animation
-                        span.style.borderRight = "6px solid #3a2318"; // Ensure cursor stays visible
+                        span.style.borderRight = "6px solid #3a2318"; // Keep cursor visible
                         span.textContent = ""; // Clear text after 3 seconds
+                        void span.offsetWidth; // Trigger reflow to ensure cursor remains
                         setTimeout(loopAnimation, 500); // Restart the loop
                     }, 3000); // Pause for 3 seconds after typing
                 }, { once: true });
