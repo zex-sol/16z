@@ -53,6 +53,11 @@
         .hero-text span {
             color: black;
             font-weight: bold;
+            border-right: 2px solid white;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3s steps(7) infinite, blink 0.5s step-end infinite;
         }
 
         .hero-image {
@@ -67,6 +72,21 @@
         footer {
             text-align: center;
             padding: 1rem 0;
+        }
+
+        @keyframes typing {
+            0%, 50% {
+                width: 0;
+            }
+            25%, 75% {
+                width: 7ch;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
         }
     </style>
 </head>
