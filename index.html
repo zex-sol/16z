@@ -118,8 +118,11 @@
                     setTimeout(() => {
                         span.style.animation = "none"; // Stop animation
                         span.style.borderRight = "6px solid #3a2318"; // Ensure cursor stays visible
-                        span.textContent = ""; // Clear text instantly
-                        setTimeout(loopAnimation, 500); // Restart the loop
+                        span.textContent = "ElizaOS"; // Retain proper text to reset
+                        setTimeout(() => {
+                            span.textContent = ""; // Clear text instantly
+                            loopAnimation(); // Restart the loop
+                        }, 500); // Short delay before restarting
                     }, 2000); // Pause for 2 seconds after typing
                 }, { once: true });
             }
