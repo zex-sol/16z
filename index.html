@@ -102,11 +102,21 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const span = document.querySelector(".hero-text span");
-            span.addEventListener("animationend", () => {
+            function loopAnimation() {
+                span.style.display = "inline-block";
+                span.style.animation = "none";
+                // Reset animation
                 setTimeout(() => {
-                    span.style.display = "none";
-                }, 3000); // Deletes the text after 3 seconds
-            });
+                    span.style.animation = "typing 4.5s steps(9, end), blink 0.5s step-end infinite";
+                });
+                span.addEventListener("animationend", () => {
+                    setTimeout(() => {
+                        span.style.display = "none";
+                        setTimeout(loopAnimation, 500); // Wait before restarting
+                    }, 3000); // Deletes the text after 3 seconds
+                }, { once: true });
+            }
+            loopAnimation();
         });
     </script>
 </head>
