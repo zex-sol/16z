@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ElizaOS Powered Website</title>
     <style>
-        @font-face {
-            font-family: 'CustomFont';
-            src: url('custom-font.woff2') format('woff2'),
-                 url('custom-font.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
         body {
             margin: 0;
-            font-family: 'CustomFont', Arial, sans-serif;
+            font-family: 'IBM Plex Mono', monospace;
             background: linear-gradient(to right, #ff7e00, #ff4500);
             color: white;
             display: flex;
@@ -66,7 +60,7 @@
         .hero-text span {
             color: #3a2318; /* Updated to match the darker color from the image */
             font-weight: bold;
-            border-right: 2px solid white;
+            border-right: 2px solid #3a2318; /* Cursor color matches the text color */
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
