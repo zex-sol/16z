@@ -64,7 +64,7 @@
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
-            animation: typing 3.33s steps(7) infinite, blink 0.5s step-end infinite; /* Typing speed reduced to 60% */
+            animation: typing 6.66s steps(7) 1, blink 0.5s step-end infinite, pause-text 6.66s steps(7) 1 3s; /* Typing speed reduced by 50% and text stays for 3s */
         }
 
         .hero-image {
@@ -92,6 +92,12 @@
             }
             76%, 100% {
                 width: 0;
+            }
+        }
+
+        @keyframes pause-text {
+            0%, 100% {
+                width: 7ch;
             }
         }
 
