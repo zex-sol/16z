@@ -33,7 +33,6 @@
             color: white;
             text-decoration: none;
             margin-left: 1rem;
-            font-size: 1.5rem; /* Updated to match the desired size */
         }
 
         header nav a:hover {
@@ -85,26 +84,14 @@
         }
 
         @keyframes typing {
-            0%, 11.11% {
+            0%, 25% {
                 width: 0;
             }
-            22.22%, 33.33% {
-                width: 1ch;
+            50%, 75% {
+                width: 7ch;
             }
-            44.44%, 55.55% {
-                width: 2ch;
-            }
-            66.66%, 77.77% {
-                width: 3ch;
-            }
-            88.88%, 100% {
-                width: 4ch;
-            }
-        }
-
-        @keyframes pause-text {
-            0%, 100% {
-                width: 9ch;
+            76%, 100% {
+                width: 0;
             }
         }
 
