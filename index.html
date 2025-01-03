@@ -64,7 +64,7 @@
         .hero-text span {
             color: #3a2318;
             font-weight: bold;
-            border-right: 5.5rem solid #3a2318; /* Match thickness to text size */
+            border-right: 1.375rem solid #3a2318; /* Set cursor thickness to 25% of the previous size */
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
@@ -121,7 +121,7 @@
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
                         span.style.animation = "none"; // Stop animation
-                        span.style.borderRight = "5.5rem solid #3a2318"; // Keep cursor visible with updated thickness
+                        span.style.borderRight = "1.375rem solid #3a2318"; // Keep cursor visible with updated thickness
                         span.textContent = ""; // Clear text after 3 seconds
                         void span.offsetWidth; // Trigger reflow to ensure cursor remains
                         setTimeout(loopAnimation, 500); // Restart the loop
