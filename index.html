@@ -57,7 +57,7 @@
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
-            animation: typing 3s steps(7) infinite, blink 0.5s step-end infinite;
+            animation: typing 2s steps(7) infinite, blink 0.5s step-end infinite;
         }
 
         .hero-image {
@@ -75,11 +75,14 @@
         }
 
         @keyframes typing {
-            0%, 50% {
+            0%, 25% {
                 width: 0;
             }
-            25%, 75% {
+            50%, 75% {
                 width: 7ch;
+            }
+            76%, 100% {
+                width: 0;
             }
         }
 
