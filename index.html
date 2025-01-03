@@ -33,7 +33,7 @@
             color: white;
             text-decoration: none;
             margin-left: 1rem;
-            font-size: 1.5rem; /* Adjusted to match the desired size */
+            font-size: 1.5rem;
         }
 
         header nav a:hover {
@@ -53,19 +53,19 @@
         }
 
         .hero-text h1 {
-            font-size: 5.5rem; /* Adjusted size */
+            font-size: 5.5rem;
             margin: 0;
             line-height: 1.2;
         }
 
         .hero-text span {
-            color: #3a2318; /* Updated to match darker text color */
+            color: #3a2318;
             font-weight: bold;
-            border-right: 4px solid #3a2318; /* Adjusted cursor thickness */
+            border-right: 4px solid #3a2318;
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
-            animation: typing 9s steps(9, end), blink 0.5s step-end infinite; /* Adjusted for letter-by-letter typing */
+            animation: typing 4.5s steps(9, end), blink 0.5s step-end infinite; /* Typing speed increased to 2x */
         }
 
         .hero-image {
@@ -99,6 +99,16 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const span = document.querySelector(".hero-text span");
+            span.addEventListener("animationend", () => {
+                setTimeout(() => {
+                    span.style.display = "none";
+                }, 3000); // Deletes the text after 3 seconds
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
