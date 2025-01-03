@@ -109,8 +109,9 @@
                 span.style.animation = "typing 4.5s steps(9, end), blink 0.5s step-end infinite";
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
-                        span.style.width = "0"; // Reset text to invisible
-                        setTimeout(loopAnimation, 500); // Restart the loop
+                        span.style.animation = "none"; // Stop animation
+                        span.style.width = "0"; // Reset text visibility
+                        setTimeout(loopAnimation, 500); // Restart the loop after a short delay
                     }, 3000); // Wait 3 seconds before restarting
                 }, { once: true });
             }
