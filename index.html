@@ -61,11 +61,11 @@
         .hero-text span {
             color: #3a2318;
             font-weight: bold;
-            border-right: 4px solid #3a2318;
+            border-right: 6px solid #3a2318; /* Adjusted cursor thickness */
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
-            animation: typing 4.5s steps(9, end), blink 0.5s step-end infinite; /* Typing speed increased to 2x */
+            animation: typing 4.5s steps(9, end), blink 0.5s step-end infinite;
         }
 
         .hero-image {
@@ -105,13 +105,12 @@
             function loopAnimation() {
                 span.style.display = "inline-block";
                 span.style.animation = "none";
-                // Reset animation
                 setTimeout(() => {
                     span.style.animation = "typing 4.5s steps(9, end), blink 0.5s step-end infinite";
                 });
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
-                        span.style.display = "none";
+                        span.style.width = "0"; // Keep the cursor visible
                         setTimeout(loopAnimation, 500); // Wait before restarting
                     }, 3000); // Deletes the text after 3 seconds
                 }, { once: true });
