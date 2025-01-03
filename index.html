@@ -38,6 +38,7 @@
 
         header nav a:hover {
             text-decoration: underline;
+            color: #e39643; /* Set to the hover color from the image */
         }
 
         .hero {
@@ -102,19 +103,27 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const span = document.querySelector(".hero-text span");
-            function loopAnimation() {
+
+            function resetAnimation() {
                 span.style.animation = "none";
-                // Force reflow to restart animation
-                void span.offsetWidth;
+                span.offsetWidth; // Trigger reflow to restart animation
                 span.style.animation = "typing 4.5s steps(9, end), blink 0.5s step-end infinite";
+            }
+
+            function loopAnimation() {
+                resetAnimation();
+
                 span.addEventListener("animationend", () => {
                     setTimeout(() => {
-                        span.style.animation = "none"; // Stop animation
-                        span.style.width = "0"; // Reset text visibility
-                        setTimeout(loopAnimation, 500); // Restart the loop after a short delay
-                    }, 3000); // Wait 3 seconds before restarting
+                        span.style.width = "0"; // Clear the text while keeping the cursor visible
+                        setTimeout(() => {
+                            resetAnimation(); // Restart the typing animation
+                            loopAnimation(); // Restart the loop
+                        }, 500); // Short delay before restarting
+                    }, 3000); // Wait 3 seconds with the text visible
                 }, { once: true });
             }
+
             loopAnimation();
         });
     </script>
