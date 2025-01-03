@@ -111,7 +111,7 @@
 
             function loopAnimation() {
                 span.style.animation = "none"; // Reset animation
-                span.textContent = ""; // Clear text to prepare for typing
+                span.textContent = "ElizaOS"; // Set text content for typing
                 void span.offsetWidth; // Trigger reflow to restart animation
                 span.style.animation = "typing 2s steps(9, end), blink 0.5s step-end infinite";
 
@@ -119,7 +119,7 @@
                     setTimeout(() => {
                         span.style.animation = "none"; // Stop animation
                         span.style.borderRight = "6px solid #3a2318"; // Ensure cursor stays visible
-                        span.textContent = ""; // Clear text instantly
+                        span.textContent = ""; // Clear text after 3 seconds
                         setTimeout(loopAnimation, 500); // Restart the loop
                     }, 3000); // Pause for 3 seconds after typing
                 }, { once: true });
