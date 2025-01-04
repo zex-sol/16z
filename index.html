@@ -7,8 +7,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
+        *, *::before, *::after {
+            box-sizing: border-box; /* Ensure consistent box model */
+        }
+
         body {
             margin: 0;
+            padding: 0;
             font-family: 'IBM Plex Mono', monospace;
             background: linear-gradient(to right, #ff7e00, #ff4500);
             color: white;
@@ -68,7 +73,6 @@
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
-             /* Add spacing between letters and the cursor */
             animation: typing 2s steps(9, end), blinkFade 0.5s step-end infinite;
         }
 
@@ -77,7 +81,7 @@
             bottom: 0; /* Align to the very bottom */
             right: 0; /* Align to the very right */
             max-width: 25%; /* Adjust size as needed */
-            margin-bottom: 0; /* Remove any gap */
+            margin: 0; /* Remove any gap */
         }
 
         .hero-image img {
