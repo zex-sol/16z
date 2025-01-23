@@ -130,6 +130,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const span = document.querySelector(".hero-text span");
+            const playButton = document.querySelector(".play-button");
 
             function loopAnimation() {
                 span.style.animation = "none"; // Reset animation
@@ -146,6 +147,11 @@
                     }, 3000); // Pause for 3 seconds after typing
                 }, { once: true });
             }
+
+            playButton.addEventListener("click", () => {
+                const audio = new Audio('deku.mp3');
+                audio.play();
+            });
 
             loopAnimation();
         });
