@@ -131,6 +131,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             const span = document.querySelector(".hero-text span");
             const playButton = document.querySelector(".play-button");
+            let isPlaying = false;
 
             function loopAnimation() {
                 span.style.animation = "none"; // Reset animation
@@ -149,8 +150,14 @@
             }
 
             playButton.addEventListener("click", () => {
-                const audio = new Audio('deku.mp3');
-                audio.play();
+                if (!isPlaying) {
+                    isPlaying = true;
+                    const audio = new Audio('deku.mp3');
+                    audio.play();
+                    audio.addEventListener('ended', () => {
+                        isPlaying = false;
+                    });
+                }
             });
 
             loopAnimation();
